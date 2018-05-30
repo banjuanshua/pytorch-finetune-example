@@ -18,6 +18,6 @@ Here I just change 1000 fc layer into 100 fc layer.
 1.convert torch model to pytorch model\
 2.generate images by deal.py into a floder\
 3.modify CNN to your own model\
-4.train\
+4.train
 
 
