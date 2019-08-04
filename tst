@@ -80,3 +80,35 @@ public class Main {
         }
     }
 }
+
+
+
+# 2 
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        while (sc.hasNextInt()){
+            int n = sc.nextInt();
+            int totalMoney= sc.nextInt();
+            int[] price=new int[n];
+            int[] v=new int[n];
+            int[] num=new int[n];
+            for (int i=0;i<n;i++){
+                price[i]=sc.nextInt();
+                v[i]=sc.nextInt();
+                num[i]=sc.nextInt();
+            }
+
+            int[] dp=new int[totalMoney+1];
+            for (int i=0;i<n;i++){
+                for (int j=0;j<num[i];j++){
+                    for (int k=totalMoney;k>=price[i];k--){
+                        dp[k]=Math.max(dp[k-price[i]]+v[i],dp[k]);
+                    }
+                }
+            }
+            System.out.println(dp[totalMoney]);
+        }
+    }
+}
